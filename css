@@ -1,0 +1,88 @@
+/* MEDIA QUERIES */
+/* Media Queries have multiple uses, but one of the main uses is that Media Queries help determine how element are displayed on different viewport/screen/device sizes. */
+
+body {
+  background-color: purple;
+}
+
+/*
+Syntax Example
+
+@media (condition) {
+  selector {
+    property: value;
+  }
+}
+*/
+
+/* Remember to keep media queries at the end of the your CSS file so the styles are NOT overwritten */
+/* When the viewport width is 700px or less the background color on the body element will be royal blue */
+@media (max-width: 700px){
+  body {
+    background-color: royalblue;
+  }
+}
+
+/* When using max-width media queries, start with the largest size and work down from there */
+/* When the viewport width is 500px or less the background color on the body element will be green */
+@media (max-width: 500px) {
+  body {
+    background-color: green;
+  }  
+}
+
+/* When the viewport is in landscape mode (Width is greater than height) the h2 element text will be uppercase */
+@media (orientation: landscape) {
+  h2 {
+    text-transform: uppercase;
+  }
+}
+
+/* When the viewport is in portrait mode (Height is greater than width) the h2 element text will have the line-through style applied */
+@media (orientation: portrait) {
+  h2 {
+    text-decoration: line-through;
+  }  
+}
+
+/* Multiple Media Query Conditions can be combined together using the "and" keyword */
+/* When the viewport is in portrait mode (Height is greater than width) AND width is 400px or less the border will be applied to the h1 element */
+@media (orientation: portrait) and (max-width: 400px){
+  h1 {
+    border: 10px dashed black;
+  }
+}
+
+/* To have style(s) applied when at least one Media Query condition is true a comma "," can be used to join these two conditions. */
+/* When the viewport is in portrait mode (Height is greater than width) OR width is 400px or less the h1 will have the white text color (NOTE: Style will also be applied when both conditions are true) */
+@media (orientation: portrait), (max-width: 400px) {
+  h1 {
+    color: white;
+  }
+}
+
+/* When the viewport width is 800px or greater the background color on the body element will be tomato. Also, the background color on the h1 element will teal and the font size will be 50px */
+@media (min-width: 800px) {
+  body {
+    background-color: tomato;
+  }
+  h1 {
+    background-color: teal;
+    font-size: 50px;
+  }
+}
+
+/* When using min-width media queries, start with the smallest size and work down from there */
+/* When the viewport width is 900px or greater the background color on the body element will be yellow. */
+@media (min-width: 900px) {
+  body {
+    background-color: yellow;
+  }
+}
+
+/* When the viewport height 500px or greater AND the viewport height is 600px or less AND the viewport is in portrait mode (Height is greater than width) the font size on the h2 will be 75px. */
+@media (min-height: 500px) and (max-height: 600px) and (orientation: portrait) {
+  h2 {
+    font-size: 75px;
+  }  
+}
